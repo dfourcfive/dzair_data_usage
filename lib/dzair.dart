@@ -85,7 +85,7 @@ class Dzair {
         .toList();
   }
 
-/**
+  /**
    * Returns list of [Commune] object
    * 
    * this method takes two paramateres [communeName] and [language] (FR or AR)
@@ -108,7 +108,7 @@ class Dzair {
         .toList();
   }
 
-/**
+  /**
    * Returns list of [PostCode] object
    * 
    * this method return  every post code data in the country

@@ -32,21 +32,34 @@ import 'package:dzair_data_usage/langs.dart';
 ## Usage
 
 ```dart
-    
+
     Dzair dzair= Dzair();
     //get every wilaya in algeria
     List<Wilaya> wilayas= dzair.getWilayat();
     //get every daira in algeria
-    List<Daira> dairas= dzair.getWilayat();
+    List<Daira> dairas= dzair.getDairat();
+    //get every postcode in algeria
+    List<PostCode> postcodes= dzair.getPostCodes();
+    //print the post address of the first element in [postcodes]
+    print(postcodes[0].getPostAddress());
+
+
     //search for daira in algeria
     //result will apears in french
     List<Daira> result = dzair.searchDairatByName('mosta',Language.FR);
-
     //print result names
     result.forEach((element) {
       element.getDairaName(Language.FR);
     });
 
+
+   //search for communes in a wilaya
+    //result will apears in french
+    List<Communes> communes = wilayas[0].searchCommuneByName('m',Language.FR);
+    //print result names in arabic
+    communes.forEach((element) {
+      element.getCommuneName(Language.AR);
+    });
 
 ```
 
