@@ -54,7 +54,7 @@ import 'package:dzair_data_usage/langs.dart';
 
 
    //search for communes in a wilaya
-    //result will apears in french
+    //search using french
     List<Communes> communes = wilayas[0].searchCommuneByName('m',Language.FR);
     //print result names in arabic
     communes.forEach((element) {
