@@ -2,6 +2,9 @@
 
 dzair_data_usage is a dart/flutter package for dealing with algerian cities data such as dairas,communes and more.
 
+link to pub.dev:
+https://pub.dev/packages/dzair_data_usage
+
 ## Installation
 
 Run this command:
