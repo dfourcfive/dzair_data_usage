@@ -6,7 +6,7 @@ import 'postCode.dart';
 import 'data/algeria_cites.dart';
 
 class Wilaya {
-  Map<String, dynamic> data;
+  Map<String, dynamic>? data;
   Wilaya({this.data});
 
   /**
@@ -18,7 +18,7 @@ class Wilaya {
   List<Daira> getDairas() {
     return algeria_cites
         .where((element) =>
-            (element['wilaya_name_ascii'] == data['wilaya_name_ascii']) &&
+            (element['wilaya_name_ascii'] == data!['wilaya_name_ascii']) &&
             (element['daira_name'] == element['commune_name']))
         .map((e) => Daira(data: e))
         .toSet()
@@ -34,7 +34,7 @@ class Wilaya {
   List<Commune> getCommunes() {
     return algeria_cites
         .where((element) =>
-            (element['wilaya_name_ascii'] == data['wilaya_name_ascii']))
+            (element['wilaya_name_ascii'] == data!['wilaya_name_ascii']))
         .map((e) => Commune(data: e))
         .toSet()
         .toList();
@@ -48,9 +48,9 @@ class Wilaya {
    */
   List<PostCode> getPostCodes() {
     return algeria_postcodes
-        .where((element) => ((element['wilaya_name'] == data['wilaya_name']) &&
-            (element['wilaya_name'] == data['daira_name']) &&
-            (element['wilaya_name'] == data['commune_name'])))
+        .where((element) => ((element['wilaya_name'] == data!['wilaya_name']) &&
+            (element['wilaya_name'] == data!['daira_name']) &&
+            (element['wilaya_name'] == data!['commune_name'])))
         .map((e) => PostCode(data: e))
         .toSet()
         .toList();
@@ -67,11 +67,11 @@ class Wilaya {
     return algeria_cites
         .where((element) {
           if (language == Language.AR) {
-            return (((element['wilaya_name'] == data['wilaya_name'])) &&
+            return (element['wilaya_name'] == data!['wilaya_name'] &&
                 (element['daira_name'] == element['commune_name']) &&
                 (element['daira_name'].toString().contains(diaraName)));
           } else {
-            return ((element['wilaya_name'] == data['wilaya_name']) &&
+            return ((element['wilaya_name'] == data!['wilaya_name']) &&
                 (element['daira_name'] == element['commune_name']) &&
                 (element['daira_name_ascii'].toString().contains(diaraName)));
           }
@@ -92,10 +92,10 @@ class Wilaya {
     return algeria_cites
         .where((element) {
           if (language == Language.AR) {
-            return ((element['wilaya_name'] == data['wilaya_name']) &&
+            return ((element['wilaya_name'] == data!['wilaya_name']) &&
                 (element['commune_name'].toString().contains(communeName)));
           } else {
-            return ((element['wilaya_name'] == data['wilaya_name']) &&
+            return ((element['wilaya_name'] == data!['wilaya_name']) &&
                 (element['commune_name_ascii']
                     .toString()
                     .contains(communeName)));
@@ -112,17 +112,17 @@ class Wilaya {
    * this method take [language] (FR or AR) as parameter
    * and return the name of the wilaya 
    */
-  String getWilayaName(Language lang) {
+  String? getWilayaName(Language lang) {
     if (lang == Language.AR) {
-      return data['wilaya_name'];
+      return data!['wilaya_name'];
     } else if (lang == Language.FR) {
-      if (data.containsKey('wilaya_name_ascii')) {
-        return data['wilaya_name_ascii'];
+      if (data!.containsKey('wilaya_name_ascii')) {
+        return data!['wilaya_name_ascii'];
       }
       return "not available";
       //for additional languages
     } else
-      return data['wilaya_name_ascii'];
+      return data!['wilaya_name_ascii'];
   }
 
   /**
@@ -130,7 +130,7 @@ class Wilaya {
    * 
    * this method return the code number of the wilaya 
    */
-  String getWilayaCode() {
-    return data['wilaya_code'];
+  String? getWilayaCode() {
+    return data!['wilaya_code'];
   }
 }
