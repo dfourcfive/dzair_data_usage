@@ -17,8 +17,12 @@ class Dzair {
   List<Wilaya> getWilayat() {
     return algeria_cites
         .where((element) =>
-            (element['wilaya_name'] == element['daira_name']) &&
-            (element['daira_name'] == element['commune_name']))
+            (((element['wilaya_name_ascii'] == element['daira_name_ascii']) &&
+                (element['daira_name_ascii'] ==
+                    element['commune_name_ascii']))) ||
+            (((element['wilaya_name_ascii'] == 'Alger') &&
+                (element['daira_name_ascii'] == "Sidi M'hamed") &&
+                (element['commune_name_ascii'] == 'Alger Centre'))))
         .map((e) => Wilaya(data: e))
         .toSet()
         .toList();
