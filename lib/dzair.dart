@@ -53,10 +53,16 @@ class Dzair {
         .where((element) {
           if (language == Language.AR) {
             return ((element['daira_name'] == element['commune_name']) &&
-                (element['daira_name'].toString().contains(diaraName)));
+                (element['daira_name']
+                    .toString()
+                    .toLowerCase()
+                    .contains(diaraName.toLowerCase())));
           } else {
             return ((element['daira_name'] == element['commune_name']) &&
-                (element['daira_name_ascii'].toString().contains(diaraName)));
+                (element['daira_name_ascii']
+                    .toString()
+                    .toLowerCase()
+                    .contains(diaraName.toLowerCase())));
           }
         })
         .map((e) => Daira(data: e))
@@ -77,11 +83,17 @@ class Dzair {
           if (language == Language.AR) {
             return ((element['daira_name'] == element['wilaya_name']) &&
                 (element['daira_name'] == element['wilaya_name']) &&
-                (element['wilaya_name'].toString().contains(wilayaName)));
+                (element['wilaya_name']
+                    .toString()
+                    .toLowerCase()
+                    .contains(wilayaName.toLowerCase())));
           } else {
             return ((element['daira_name'] == element['commune_name']) &&
                 (element['daira_name'] == element['wilaya_name']) &&
-                (element['wilaya_name_ascii'].toString().contains(wilayaName)));
+                (element['wilaya_name_ascii']
+                    .toString()
+                    .toLowerCase()
+                    .contains(wilayaName.toLowerCase())));
           }
         })
         .map((e) => Wilaya(data: e))

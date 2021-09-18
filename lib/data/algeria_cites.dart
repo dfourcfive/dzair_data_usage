@@ -2444,9 +2444,9 @@ const algeria_cites = [
   },
   {
     "id": 264,
-    "commune_name_ascii": "Bechar",
+    "commune_name_ascii": "Béchar",
     "commune_name": "بشار",
-    "daira_name_ascii": "Bechar",
+    "daira_name_ascii": "Béchar",
     "daira_name": "بشار",
     "wilaya_code": "08",
     "wilaya_name_ascii": "Béchar",
@@ -3564,9 +3564,9 @@ const algeria_cites = [
   },
   {
     "id": 390,
-    "commune_name_ascii": "Tebessa",
+    "commune_name_ascii": "Tébessa",
     "commune_name": "تبسة",
-    "daira_name_ascii": "Tebessa",
+    "daira_name_ascii": "Tébessa",
     "daira_name": "تبسة",
     "wilaya_code": "12",
     "wilaya_name_ascii": "Tébessa",
@@ -15114,7 +15114,7 @@ const algeria_cites = [
   },
   {
     "id": 357,
-    "commune_name_ascii": "Ain Salah",
+    "commune_name_ascii": "In Salah",
     "commune_name": "عين صالح",
     "daira_name_ascii": "In Salah",
     "daira_name": "عين صالح",
@@ -15144,7 +15144,7 @@ const algeria_cites = [
   },
   {
     "id": 356,
-    "commune_name_ascii": "Ain Guezzam",
+    "commune_name_ascii": "In Guezzam",
     "commune_name": "عين قزام",
     "daira_name_ascii": "In Guezzam",
     "daira_name": "عين قزام",
@@ -15354,7 +15354,7 @@ const algeria_cites = [
   },
   {
     "id": 1284,
-    "commune_name_ascii": "El-M'ghaier",
+    "commune_name_ascii": "El Meghaier",
     "commune_name": "المغير",
     "daira_name_ascii": "El Meghaier",
     "daira_name": "المغير",
@@ -15384,7 +15384,7 @@ const algeria_cites = [
   },
   {
     "id": 1495,
-    "commune_name_ascii": "El Meniaa",
+    "commune_name_ascii": "El Menia",
     "commune_name": "المنيعة",
     "daira_name_ascii": "El Menia",
     "daira_name": "المنيعة",
