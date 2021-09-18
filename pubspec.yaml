@@ -1,6 +1,6 @@
 name: dzair_data_usage
 description: A package that allows you to use and manipulate algeria cities data.
-version: 0.0.2+1
+version: 0.0.3
 author:
 homepage: https://github.com/dfourcfive/dzair_data_usage
 
