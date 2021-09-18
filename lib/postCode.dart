@@ -1,12 +1,12 @@
 class PostCode {
-  Map<String, String> data;
+  late Map<String, String> data;
   PostCode({data});
 
   /**
    * return [String] object
    * this method returns the post code 
    */
-  String getPostCode() {
+  String? getPostCode() {
     return data['post_code'];
   }
 
@@ -14,7 +14,7 @@ class PostCode {
    * return [String] object
    * this method returns the code name
    */
-  String getPostName() {
+  String? getPostName() {
     return data['post_name'];
   }
 
@@ -22,7 +22,7 @@ class PostCode {
    * return [String] object
    * this method returns the code address
    */
-  String getPostAddress() {
+  String? getPostAddress() {
     return data['post_address'];
   }
 
@@ -30,7 +30,7 @@ class PostCode {
    * return [String] object
    * this method returns the commune name 
    */
-  String getCommuneName() {
+  String? getCommuneName() {
     return data['commune_name'];
   }
 
@@ -38,7 +38,7 @@ class PostCode {
    * return [String] object
    * this method returns the daira name
    */
-  String getDairaName() {
+  String? getDairaName() {
     return data['diara_name'];
   }
 
@@ -46,7 +46,7 @@ class PostCode {
    * return [String] object
    * this method returns the wilaya name
    */
-  String getWilayaName() {
+  String? getWilayaName() {
     return data['wilaya_name'];
   }
 
@@ -54,7 +54,7 @@ class PostCode {
    * return [String] object
    * this method returns the wilaya code
    */
-  String getWilayaCode() {
+  String? getWilayaCode() {
     return data['wilaya_code'];
   }
 }
