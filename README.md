@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```bash
 dependencies:
-  dzair_data_usage: 0.0.3
+  dzair_data_usage: 1.0.1
 ```
 Alternatively, your editor might support flutter pub get. Check the docs for your editor to learn more.
 
@@ -37,33 +37,33 @@ import 'package:dzair_data_usage/langs.dart';
 ```dart
 
     Dzair dzair= Dzair();
-    //get every wilaya in algeria
-    List<Wilaya> wilayas= dzair.getWilayat();
+
+    
+    List<Wilaya?>? wilayas= dzair.getWilayat();
     //get every daira in algeria
-    List<Daira> dairas= dzair.getDairat();
+    List<Daira?>? dairas= dzair.getDairat();
     //get every postcode in algeria
-    List<PostCode> postcodes= dzair.getPostCodes();
+    List<PostCode?>? postcodes= dzair.getPostCodes();
     //print the post address of the first element in [postcodes]
-    print(postcodes[0].getPostAddress());
+    print(postcodes![0]!.getPostAddress());
 
 
     //search for daira in algeria
     //result will apears in french
-    List<Daira> result = dzair.searchDairatByName('mosta',Language.FR);
+    List<Daira?>? result = dzair.searchDairatByName('mosta',Language.FR);
     //print result names
-    result.forEach((element) {
-      element.getDairaName(Language.FR);
+    result!.forEach((element) {
+      element!.getDairaName(Language.FR);
     });
 
 
-   //search for communes in a wilaya
+    //search for communes in a wilaya
     //search using french
-    List<Communes> communes = wilayas[0].searchCommuneByName('m',Language.FR);
+    List<Commune?>? communes = wilayas![0]!.searchCommuneByName('m',Language.FR);
     //print result names in arabic
-    communes.forEach((element) {
-      element.getCommuneName(Language.AR);
+    communes!.forEach((element) {
+      element!.getCommuneName(Language.AR);
     });
-
 ```
 
 ## Contributing
