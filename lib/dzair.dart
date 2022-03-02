@@ -14,12 +14,10 @@ class Dzair {
    * 
    * this method return every wilaya in the country 
    */
-  List<Wilaya> getWilayat() {
+  List<Wilaya?>? getWilayat() {
     return algeria_cites
         .where((element) =>
-            (((element['wilaya_name_ascii'] == element['daira_name_ascii']) &&
-                (element['daira_name_ascii'] ==
-                    element['commune_name_ascii']))) ||
+            (((element['wilaya_name_ascii'] == element['daira_name_ascii']) && (element['daira_name_ascii'] == element['commune_name_ascii']))) ||
             (((element['wilaya_name_ascii'] == 'Alger') &&
                 (element['daira_name_ascii'] == "Sidi M'hamed") &&
                 (element['commune_name_ascii'] == 'Alger Centre'))))
@@ -33,12 +31,8 @@ class Dzair {
    * 
    * this method return every daira in the country 
    */
-  List<Daira> getDairat() {
-    return algeria_cites
-        .where((element) => element['daira_name'] == element['commune_name'])
-        .map((e) => Daira(data: e))
-        .toSet()
-        .toList();
+  List<Daira?>? getDairat() {
+    return algeria_cites.where((element) => element['daira_name'] == element['commune_name']).map((e) => Daira(data: e)).toSet().toList();
   }
 
   /**
@@ -48,21 +42,15 @@ class Dzair {
    * looks for every [Daira]'s name that containts [diaraName] in the country
    * and return the result as list of [Diara]
    */
-  List<Daira> searchDairatByName(String diaraName, Language language) {
+  List<Daira?>? searchDairatByName(String diaraName, Language language) {
     return algeria_cites
         .where((element) {
           if (language == Language.AR) {
             return ((element['daira_name'] == element['commune_name']) &&
-                (element['daira_name']
-                    .toString()
-                    .toLowerCase()
-                    .contains(diaraName.toLowerCase())));
+                (element['daira_name'].toString().toLowerCase().contains(diaraName.toLowerCase())));
           } else {
             return ((element['daira_name'] == element['commune_name']) &&
-                (element['daira_name_ascii']
-                    .toString()
-                    .toLowerCase()
-                    .contains(diaraName.toLowerCase())));
+                (element['daira_name_ascii'].toString().toLowerCase().contains(diaraName.toLowerCase())));
           }
         })
         .map((e) => Daira(data: e))
@@ -77,23 +65,17 @@ class Dzair {
    * looks for every [Wilaya]'s name that containts [wilayaName] in the country
    * and return the result as list of [Wilaya]
    */
-  List<Wilaya> searchWilayatByName(String wilayaName, Language language) {
+  List<Wilaya?>? searchWilayatByName(String wilayaName, Language language) {
     return algeria_cites
         .where((element) {
           if (language == Language.AR) {
             return ((element['daira_name'] == element['wilaya_name']) &&
                 (element['daira_name'] == element['wilaya_name']) &&
-                (element['wilaya_name']
-                    .toString()
-                    .toLowerCase()
-                    .contains(wilayaName.toLowerCase())));
+                (element['wilaya_name'].toString().toLowerCase().contains(wilayaName.toLowerCase())));
           } else {
             return ((element['daira_name'] == element['commune_name']) &&
                 (element['daira_name'] == element['wilaya_name']) &&
-                (element['wilaya_name_ascii']
-                    .toString()
-                    .toLowerCase()
-                    .contains(wilayaName.toLowerCase())));
+                (element['wilaya_name_ascii'].toString().toLowerCase().contains(wilayaName.toLowerCase())));
           }
         })
         .map((e) => Wilaya(data: e))
@@ -108,15 +90,13 @@ class Dzair {
    * looks for every [Commune]'s name that containts [communeName] in the country
    * and return the result as list of [Commune]
    */
-  List<Commune> searchCommuneByName(String communeName, Language language) {
+  List<Commune?>? searchCommuneByName(String communeName, Language language) {
     return algeria_cites
         .where((element) {
           if (language == Language.AR) {
             return ((element['commune_name'].toString().contains(communeName)));
           } else {
-            return ((element['commune_name_ascii']
-                .toString()
-                .contains(communeName)));
+            return ((element['commune_name_ascii'].toString().contains(communeName)));
           }
         })
         .map((e) => Commune(data: e))
@@ -130,7 +110,7 @@ class Dzair {
    * this method return  every post code data in the country
    * and return the result as list of [PostCode]
    */
-  List<PostCode> getPostCodes() {
+  List<PostCode?>? getPostCodes() {
     return algeria_postcodes.map((e) => PostCode(data: e)).toSet().toList();
   }
 }
